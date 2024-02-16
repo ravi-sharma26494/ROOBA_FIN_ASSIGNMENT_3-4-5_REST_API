@@ -82,7 +82,10 @@ const deleteUser = async (req, res) => {
         message: "No user found",
       });
     }
-    res.send(user);
+    res.send({
+      deletedUserData: user,
+      message: "User Deleted Successfully",
+    });
   } catch (error) {
     res.status(500).send(error);
   }
